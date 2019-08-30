@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="HYu-5k-CZE">
-                                <rect key="frame" x="20" y="64" width="374" height="106.5"/>
+                                <rect key="frame" x="20" y="64" width="374" height="357"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item to Cram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efb-od-ixu">
                                         <rect key="frame" x="0.0" y="0.0" width="99" height="20.5"/>
@@ -36,10 +36,21 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwn-tA-AID">
                                         <rect key="frame" x="0.0" y="76.5" width="151" height="30"/>
                                         <state key="normal" title="Set Default Label Text"/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aR7-sA-QSZ"/>
+                                        </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="6wN-B8-c6F">
+                                        <rect key="frame" x="0.0" y="119.5" width="320" height="237.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="P1n-KC-Ngf"/>
+                                            <constraint firstAttribute="width" secondItem="6wN-B8-c6F" secondAttribute="height" multiplier="346:257" id="iEX-cQ-OuR"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="f45-JD-NqF" secondAttribute="trailing" id="5bR-xB-xo7"/>
+                                    <constraint firstItem="6wN-B8-c6F" firstAttribute="top" secondItem="cwn-tA-AID" secondAttribute="bottom" constant="10" id="xZm-oE-GgY"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -54,10 +65,17 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="cramNameLabel" destination="Efb-od-ixu" id="t47-TV-rwq"/>
+                        <outlet property="nameTextField" destination="f45-JD-NqF" id="3U5-DB-4aB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57.971014492753625" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-126.08695652173914" y="52.232142857142854"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="2656" height="1494"/>
+    </resources>
 </document>
