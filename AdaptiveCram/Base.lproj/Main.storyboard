@@ -40,12 +40,16 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aR7-sA-QSZ"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="6wN-B8-c6F">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="6wN-B8-c6F" userLabel="Photo Image View">
                                         <rect key="frame" x="0.0" y="119.5" width="320" height="237.5"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="P1n-KC-Ngf"/>
                                             <constraint firstAttribute="width" secondItem="6wN-B8-c6F" secondAttribute="height" multiplier="346:257" id="iEX-cQ-OuR"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="uYb-bJ-jXr" appends="YES" id="2SX-af-rH1"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -68,11 +72,17 @@
                     <connections>
                         <outlet property="cramNameLabel" destination="Efb-od-ixu" id="t47-TV-rwq"/>
                         <outlet property="nameTextField" destination="f45-JD-NqF" id="3U5-DB-4aB"/>
+                        <outlet property="photoImageView" destination="6wN-B8-c6F" id="URr-DP-KVk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uYb-bJ-jXr">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="yaN-Kk-9q1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-126.08695652173914" y="52.232142857142854"/>
+            <point key="canvasLocation" x="-46" y="-54"/>
         </scene>
     </scenes>
     <resources>
