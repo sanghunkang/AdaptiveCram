@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="HYu-5k-CZE">
-                                <rect key="frame" x="20" y="64" width="374" height="357"/>
+                                <rect key="frame" x="20" y="64" width="374" height="447"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item to Cram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efb-od-ixu">
                                         <rect key="frame" x="0.0" y="0.0" width="99" height="20.5"/>
@@ -28,24 +26,37 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Something" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f45-JD-NqF">
-                                        <rect key="frame" x="0.0" y="33.5" width="374" height="30"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="33.5" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTP-9R-TMA">
+                                        <rect key="frame" x="0.0" y="80.5" width="35" height="30"/>
+                                        <state key="normal" title=" True"/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kOZ-Uc-idW"/>
+                                            <action selector="trueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSo-e6-ZMh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f2-qV-UTk">
+                                        <rect key="frame" x="0.0" y="123.5" width="36" height="30"/>
+                                        <state key="normal" title="False"/>
+                                        <connections>
+                                            <action selector="falseBUtton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFA-ol-mQf"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwn-tA-AID">
-                                        <rect key="frame" x="0.0" y="76.5" width="151" height="30"/>
+                                        <rect key="frame" x="0.0" y="166.5" width="151" height="30"/>
                                         <state key="normal" title="Set Default Label Text"/>
                                         <connections>
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aR7-sA-QSZ"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="6wN-B8-c6F" userLabel="Photo Image View">
-                                        <rect key="frame" x="0.0" y="119.5" width="320" height="237.5"/>
+                                        <rect key="frame" x="0.0" y="209.5" width="320" height="237.5"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="320" id="P1n-KC-Ngf"/>
-                                            <constraint firstAttribute="width" secondItem="6wN-B8-c6F" secondAttribute="height" multiplier="346:257" id="iEX-cQ-OuR"/>
+                                            <constraint firstAttribute="height" constant="237.5" id="MsZ-23-rMQ"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="uYb-bJ-jXr" appends="YES" id="2SX-af-rH1"/>
@@ -54,7 +65,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="f45-JD-NqF" secondAttribute="trailing" id="5bR-xB-xo7"/>
-                                    <constraint firstItem="6wN-B8-c6F" firstAttribute="top" secondItem="cwn-tA-AID" secondAttribute="bottom" constant="10" id="xZm-oE-GgY"/>
+                                    <constraint firstAttribute="trailing" secondItem="6wN-B8-c6F" secondAttribute="trailing" constant="54" id="NcZ-ou-jxL"/>
                                 </constraints>
                             </stackView>
                         </subviews>

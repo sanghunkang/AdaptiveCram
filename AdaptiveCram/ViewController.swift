@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cramNameLabel: UILabel!
@@ -18,6 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         super.viewDidLoad()
         // Handle the text field’s user input through delegate callbacks.
         nameTextField.delegate = self
+
     }
 
     //MARK: UITextFieldDelegate
@@ -51,6 +53,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func trueButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func falseBUtton(_ sender: Any) {
+    }
+    
     //MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // Hide the keyboard.
@@ -68,6 +77,31 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         cramNameLabel.text = "Default Text"
+    }
+    
+    @IBAction func setDefaultLabelText2(_ sender: UIButton) {
+
+        let url = URL(string: "https://www.stackoverflow.com")!
+//        let params = String(params);
+        var request = URLRequest(url: url) //NSMutableURLRequest(url: url!);
+        request.httpMethod = "GET"
+//        request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
+
+        let task = URLSession.shared.dataTask(with: request) {[weak self] data, response, error in
+
+            if error != nil {
+                print(error!)
+                return
+            }
+
+            DispatchQueue.main.async {
+                print(String(data: data!, encoding: .utf8)!)
+                self?.cramNameLabel.text = "AT LEAST API CALL WAS SUCCESSFUL"
+            }
+        }
+        
+        task.resume();
+        
     }
 }
 
