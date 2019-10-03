@@ -7,6 +7,16 @@
 
 import UIKit
 
+struct Content: Codable {
+    let _id: String?
+    var _rev: String?
+    let question: String
+    let answer: Bool
+    let description: String
+    let rank: Int?
+    let last_answered_wrong: String?
+}
+
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
@@ -14,6 +24,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cramNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    var loadedContent: Content!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +94,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     @IBAction func setDefaultLabelText2(_ sender: UIButton) {
 
-        let url = URL(string: "https://www.stackoverflow.com")!
+        var components = URLComponents(string: "http://127.0.0.1:8000/getContent")!
+
+        components.queryItems = [
+//            URLQueryItem(name: "i", value: "1+2")
+        ]
+
 //        let params = String(params);
-        var request = URLRequest(url: url) //NSMutableURLRequest(url: url!);
+        var request = URLRequest(url: components.url!) //NSMutableURLRequest(url: url!);
         request.httpMethod = "GET"
 //        request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
 
@@ -94,13 +112,35 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
                 return
             }
 
+            
             DispatchQueue.main.async {
-                print(String(data: data!, encoding: .utf8)!)
-                self?.cramNameLabel.text = "AT LEAST API CALL WAS SUCCESSFUL"
+                
+                do {
+                    print(String(data: data!, encoding: .utf8)!)
+                    let decoder = JSONDecoder()
+                    let data = try decoder.decode(Content.self, from: data!)
+//                    print(data.last_answered_wrong!)
+                    self?.loadedContent = try decoder.decode(Content.self, from: data!)
+                    print(self?.loadedContent.question)
+                
+                    self?.cramNameLabel.text = data.question
+                } catch let error {
+                    print(error)
+                }
             }
+
         }
         
         task.resume();
+        
+    }
+    
+    // TODO : I THINK THEY MUST BE WRAPPED AND TRIGGERED BY A SINGLE FUNCTION
+    @IBAction func setDescriptionText(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func setAnswerText(_ sender: UIButton) {
         
     }
 }

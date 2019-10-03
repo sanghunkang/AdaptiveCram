@@ -35,6 +35,7 @@
                                         <state key="normal" title=" True"/>
                                         <connections>
                                             <action selector="setDefaultLabelText2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kOZ-Uc-idW"/>
+                                            <action selector="setDescriptionText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dTE-5N-hyM"/>
                                             <action selector="trueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSo-e6-ZMh"/>
                                         </connections>
                                     </button>
@@ -43,6 +44,7 @@
                                         <state key="normal" title="False"/>
                                         <connections>
                                             <action selector="falseBUtton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFA-ol-mQf"/>
+                                            <action selector="setDescriptionText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j6X-L3-Gku"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwn-tA-AID">
