@@ -11,6 +11,7 @@ struct Content: Codable {
     let _id: String?
     var _rev: String?
     var type: String?
+    var set_name: String
 
     var question: String
     var answer: Bool
@@ -19,6 +20,7 @@ struct Content: Codable {
     // Automatically computed by service. Ordinary users wouldn't have access to manipulate these
     let rank: Int?
     var created_at: String?
+    var last_served_at: String?
     var last_succeeded_at: String?
     var last_failed_at: String?
     var last_gaveup_at: String?
@@ -26,6 +28,8 @@ struct Content: Codable {
     var count_succeeded: Int?
     var count_gaveup: Int?
 }
+
+
 
 func getCurrentDateString() -> String {
     let now = Date()
@@ -69,7 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     @IBAction func setDefaultLabelText2(_ sender: UIButton) {
 
-        var components = URLComponents(string: "http://127.0.0.1:8000/getContent")!
+        var components = URLComponents(string: "http://127.0.0.1:8080/getContent")!
 
         components.queryItems = [
 //            URLQueryItem(name: "i", value: "1+2")
