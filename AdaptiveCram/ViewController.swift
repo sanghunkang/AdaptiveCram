@@ -30,17 +30,6 @@ struct Content: Codable {
 }
 
 
-
-func getCurrentDateString() -> String {
-    let now = Date()
-    let formatter = DateFormatter()
-    formatter.timeZone = TimeZone.current
-    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-    let dateString = formatter.string(from: now)
-    return dateString
-}
-
-
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
@@ -71,49 +60,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 //        cramNameLabel.text = "Default Text"
     }
     
-    @IBAction func setDefaultLabelText2(_ sender: UIButton) {
-
-        var components = URLComponents(string: "http://127.0.0.1:8080/getContent")!
-
-        components.queryItems = [
-//            URLQueryItem(name: "i", value: "1+2")
-        ]
-
-//        let params = String(params);
-        var request = URLRequest(url: components.url!) //NSMutableURLRequest(url: url!);
-        request.httpMethod = "GET"
-//        request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
-
-        let task = URLSession.shared.dataTask(with: request) {[weak self] data, response, error in
-
-            if error != nil {
-                print(error!)
-                return
-            }
-
-            
-            DispatchQueue.main.async {
-                
-                do {
-                    print(String(data: data!, encoding: .utf8)!)
-                    let decoder = JSONDecoder()
-//                    let data = try decoder.decode(Content.self, from: data!)
-//                    print(data.last_answered_wrong!)
-                    self?.loadedContent = try decoder.decode(Content.self, from: data!)
-                    print(self?.loadedContent.question as Any)
-                
-                    self?.cramQuestion.text = self?.loadedContent.question
-                    self?.cramDescription.text = ""
-                    
-                } catch let error {
-                    print(error)
-                }
-            }
-
-        }
-        
-        task.resume();
-        
+    @IBAction func handleClickLoadContent(_ sender: UIButton) {
+        fetchGetContent()
     }
     
     @IBAction func handleAttempt(_ sender: UIButton) {
@@ -161,10 +109,95 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 //        self.present(alert, animated: true, completion: nil)
 //    }
     
-    // Internal actions
-    private func updateFeedbackLabel(hasAnsweredCorrect: Bool) {
+    
+    
+    
+    // API Callers
+    private func fetchUpdateContent(hasAnsweredCorrect: Bool) {
+        var answer_status = "undefined"
+        if hasAnsweredCorrect == true {
+            answer_status = "correct_answer"
+        } else if hasAnsweredCorrect == false {
+            answer_status = "correct_answer"
+        }
         
-//        feedbackUserAnswerLabel.text = "Your Answer"
+        let json: [String: Any] = [
+            "_id": loadedContent._id!,
+            "set_name": loadedContent.set_name,
+            "answer_status": answer_status,
+        ]
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+
+        let components = URLComponents(string: "http://127.0.0.1:8080/updateContent")!
+        var request = URLRequest(url: components.url!)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) {data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+        }
+        task.resume();
+    }
+    
+    
+    private func fetchGetSetNames() {
+        let components = URLComponents(string: "http://127.0.0.1:8080/getSetNames")!
+        //        components.queryItems = [
+        //            URLQueryItem(name: "i", value: "1+2")
+        //                ]
+        var request = URLRequest(url: components.url!)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) {data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+        }
+        task.resume();
+    }
+    
+    private func fetchGetContent() {
+        var components = URLComponents(string: "http://127.0.0.1:8080/getContent")!
+        components.queryItems = [
+            URLQueryItem(name: "set_name", value: "commercial_law")
+        ]
+        var request = URLRequest(url: components.url!) //NSMutableURLRequest(url: url!);
+        request.httpMethod = "GET"
+
+        let task = URLSession.shared.dataTask(with: request) {[weak self] data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+
+            
+            DispatchQueue.main.async {
+                do {
+                    print(String(data: data!, encoding: .utf8)!)
+                    let decoder = JSONDecoder()
+                    self?.loadedContent = try decoder.decode(Content.self, from: data!)
+                    print(self?.loadedContent.question as Any)
+                
+                    self?.cramQuestion.text = self?.loadedContent.question
+                    self?.cramDescription.text = ""
+                    
+                } catch let error {
+                    print(error)
+                }
+            }
+
+        }
+        
+        task.resume();
+    }
+    
+    // Client updates
+    private func updateFeedbackLabel(hasAnsweredCorrect: Bool) {
         feedbackCorrectAnswerLabel.text = "Correct Answer"
         print(hasAnsweredCorrect)
         if hasAnsweredCorrect == true {
@@ -182,35 +215,5 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     private func updateSolutionLabel() {
         cramDescription.text = loadedContent.solution
     }
-    
-    private func fetchUpdateContent(hasAnsweredCorrect: Bool) {
-        var json: [String: Any] = [
-            "_id": loadedContent._id!,
-            "answer": loadedContent.answer,
-            "question": loadedContent.question,
-            "solution": loadedContent.solution
-        ]
-        if hasAnsweredCorrect == true {
-            json["last_succeeded_at"] = getCurrentDateString()
-        } else {
-            json["last_failed_at"] = getCurrentDateString()
-        }
-        let jsonData = try? JSONSerialization.data(withJSONObject: json)
-
-        let components = URLComponents(string: "http://127.0.0.1:8000/updateContent")!
-        var request = URLRequest(url: components.url!)
-        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
-        
-        let task = URLSession.shared.dataTask(with: request) {data, response, error in
-            if error != nil {
-                print(error!)
-                return
-            }
-        }
-        task.resume();
-    }
-    
 }
 
