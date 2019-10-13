@@ -45,7 +45,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 
     
     //MARK: Properties
-    
+
+
     @IBOutlet var background: UIView!
     
     @IBOutlet weak var cramQuestion: UILabel!
