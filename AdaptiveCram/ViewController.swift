@@ -33,24 +33,7 @@ struct Content: Codable {
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
-    //MARK: Properties
 
-
-    @IBOutlet var background: UIView!
-    
-    @IBOutlet weak var cramQuestion: UILabel!
-    @IBOutlet weak var cramDescription: UILabel!
-    
-    @IBOutlet weak var feedbackUserAnswerLabel: UILabel!
-    @IBOutlet weak var feedbackUserAnswerValue: UILabel!
-    @IBOutlet weak var feedbackCorrectAnswerLabel: UILabel!
-    @IBOutlet weak var feedbackCorrectAnswerValue: UILabel!
-    
-    
-    var loadedContent: Content!
-//    var loadedContent = Content(question: "sample question", answer: true, description: "sample description")
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Handle the text field’s user input through delegate callbacks.
