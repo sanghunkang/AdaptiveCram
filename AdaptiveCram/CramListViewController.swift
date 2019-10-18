@@ -7,30 +7,71 @@
 
 import UIKit
 
+struct SetName: Codable {
+    var set_name: String
+
+    init(set_name: String) {
+        self.set_name = set_name
+    }
+}
+
 class CramListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet weak var cramListTableView: UITableView!
+    // States
     let cellIdentifier: String = "CramList"
-    
     let cpa: [String] = ["회계학", "경제학"]
     let toeic: [String] = ["700달성", "고난도어휘"]
-
+    var setNames: [SetName] = []
     var dates: [Date] = []
     
+    // IBOutlets
+    @IBOutlet weak var cramListTableView: UITableView!
+    @IBOutlet var addListButton: UIButton!
+    @IBOutlet var goCramButton: UIButton!
+    
+    // IBActions
     @IBAction func touchUpAddButton(_ sender: UIButton){
         dates.append(Date())
         self.cramListTableView.reloadData()
     }
     
-    @IBOutlet var addListButton: UIButton!
-    @IBOutlet var goCramButton: UIButton!
-    
+    // View cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        fetchGetSetNames()
     }
     
+    // API callers
+    private func fetchGetSetNames() {
+        let components = URLComponents(string: "http://173.193.112.127:31842/getSetNames")!
+        var request = URLRequest(url: components.url!)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) {[weak self] data, response, error in
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                do {
+                    print(String(data: data!, encoding: .utf8)!)
+                    let decoder = JSONDecoder()
+                    self?.setNames = try decoder.decode([SetName].self, from: data!)
+                    print(self?.setNames as Any)
+    
+                } catch let error {
+                    print(error)
+                }
+            }
+        }
+        print(setNames)
+        task.resume();
+
+    }
+    
+    
+    // Client updates
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
