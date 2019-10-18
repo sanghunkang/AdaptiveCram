@@ -7,8 +7,21 @@
 
 import UIKit
 
-class CramListViewController: UIViewController {
+class CramListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var cramListTableView: UITableView!
+    let cellIdentifier: String = "CramList"
+    
+    let cpa: [String] = ["회계학", "경제학"]
+    let toeic: [String] = ["700달성", "고난도어휘"]
 
+    var dates: [Date] = []
+    
+    @IBAction func touchUpAddButton(_ sender: UIButton){
+        dates.append(Date())
+        self.cramListTableView.reloadData()
+    }
+    
     @IBOutlet var addListButton: UIButton!
     @IBOutlet var goCramButton: UIButton!
     
@@ -18,15 +31,44 @@ class CramListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return cpa.count
+        case 1:
+            return toeic.count
+        case 2:
+            return dates.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+        
+        if indexPath.section < 2 {
+            
+            let text: String = indexPath.section == 0 ? cpa[indexPath.row] : toeic[indexPath.row]
+            cell.textLabel?.text = text
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if section < 2 {
+            return section == 0 ? "CPA" : "토익"
+        }
+        
+        return nil
+    }
 }
+
+
