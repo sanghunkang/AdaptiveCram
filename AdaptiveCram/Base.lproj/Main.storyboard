@@ -199,9 +199,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tkE-L2-eBS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tkE-L2-eBS">
                                 <rect key="frame" x="20" y="189" width="374" height="455"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="thw-DQ-w3m">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
@@ -209,7 +208,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CramList" textLabel="UYG-cA-9HO" rowHeight="74" style="IBUITableViewCellStyleDefault" id="8KR-Sp-d7t">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OtherCramList" textLabel="UYG-cA-9HO" rowHeight="74" style="IBUITableViewCellStyleDefault" id="8KR-Sp-d7t">
                                         <rect key="frame" x="0.0" y="99.5" width="374" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8KR-Sp-d7t" id="LGS-rZ-ZGf">
@@ -232,25 +231,34 @@
                                     <outlet property="delegate" destination="eqN-P7-cuM" id="3r5-PR-FSk"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other Cram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-9A-9aD">
-                                <rect key="frame" x="147" y="109" width="121" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Other Cram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-9A-9aD">
+                                <rect key="frame" x="147" y="109" width="125" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tkE-L2-eBS" firstAttribute="top" secondItem="EyS-9A-9aD" secondAttribute="bottom" constant="51" id="1yW-94-ppa"/>
+                            <constraint firstItem="gFj-xp-KPp" firstAttribute="bottom" secondItem="tkE-L2-eBS" secondAttribute="bottom" constant="169" id="33i-yP-wwT"/>
+                            <constraint firstItem="EyS-9A-9aD" firstAttribute="leading" secondItem="gFj-xp-KPp" secondAttribute="leading" constant="147" id="7V3-5U-tj2"/>
+                            <constraint firstItem="EyS-9A-9aD" firstAttribute="centerX" secondItem="IyI-Yn-nRI" secondAttribute="centerX" id="I7u-6D-ikA"/>
+                            <constraint firstItem="tkE-L2-eBS" firstAttribute="leading" secondItem="IyI-Yn-nRI" secondAttribute="leadingMargin" id="OH7-tq-FET"/>
+                            <constraint firstItem="EyS-9A-9aD" firstAttribute="centerX" secondItem="tkE-L2-eBS" secondAttribute="centerX" id="ik3-SQ-Phc"/>
+                            <constraint firstItem="EyS-9A-9aD" firstAttribute="top" secondItem="gFj-xp-KPp" secondAttribute="top" constant="21" id="w2B-X7-u4Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gFj-xp-KPp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Category" image="list.dash" catalog="system" id="0yO-bd-ig7"/>
                     <connections>
+                        <outlet property="cramCategorySearchBar" destination="thw-DQ-w3m" id="pdA-j1-cwI"/>
                         <outlet property="cramCategoryTableView" destination="tkE-L2-eBS" id="b9k-da-kFg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LM-0p-NSf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3232" y="748"/>
+            <point key="canvasLocation" x="3231.884057971015" y="747.99107142857144"/>
         </scene>
         <!--My-->
         <scene sceneID="bCW-5T-l7S">
@@ -353,6 +361,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="naF-1U-aqO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aqM-l1-kh2">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

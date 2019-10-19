@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CramCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CramCategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     // States
-    let cellIdentifier: String = "CramCategoryList"
+    let cellIdentifier: String = "OtherCramList"
     let aptitude_test: [String] = ["gsat", "hmat"]
     let korean_history: [String] = ["선사시대", "근현대사"]
     let driver_license: [String] = ["필기", "실기"]
@@ -18,6 +18,7 @@ class CramCategoryViewController: UIViewController, UITableViewDelegate, UITable
     
     // IBOutlets
     @IBOutlet weak var cramCategoryTableView: UITableView!
+    @IBOutlet weak var cramCategorySearchBar: UISearchBar!
     
     // IBActions
    
@@ -25,6 +26,10 @@ class CramCategoryViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.cramCategoryTableView.dataSource = self
+        self.cramCategoryTableView.delegate = self
+        self.cramCategorySearchBar.delegate = self //서치바 관련 이벤트 처리
+        self.cramCategorySearchBar.placeholder = "Input Category name" //힌트 등록
         
     }
     
@@ -32,7 +37,7 @@ class CramCategoryViewController: UIViewController, UITableViewDelegate, UITable
     
     // Client updates
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,10 +47,10 @@ class CramCategoryViewController: UIViewController, UITableViewDelegate, UITable
             return aptitude_test.count
         case 1:
             return korean_history.count
-        case 2:
+        /*case 2:
             return driver_license.count
         case 3:
-            return computer_skills.count
+            return computer_skills.count*/
         default:
             return 0
         }
@@ -66,29 +71,10 @@ class CramCategoryViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        switch section {
-        case 0:
-            return "적성검사"
-        case 1:
-            return "한국사"
-        case 2:
-            return "운전면허"
-        case 3:
-            return "컴활"
-        default:
-            return ""
+        if section < 2 {
+            return section == 0 ? "인적성" : "한국사"
         }
+        
+        return nil
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

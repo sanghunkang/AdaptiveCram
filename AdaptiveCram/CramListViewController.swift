@@ -19,7 +19,6 @@ class CramListViewController: UIViewController, UITableViewDelegate, UITableView
     // States
     //let appDelegate = UIApplication.shared.delegate as! AppDelegate     // 앱 델리게이트 참조 정보를 가져옴
 
-    
     let cellIdentifier: String = "CramList"
     let cpa: [String] = ["회계학", "경제학"]
     let toeic: [String] = ["700달성", "고난도어휘"]
