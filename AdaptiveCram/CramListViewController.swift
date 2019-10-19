@@ -17,6 +17,9 @@ struct SetName: Codable {
 
 class CramListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // States
+    //let appDelegate = UIApplication.shared.delegate as! AppDelegate     // 앱 델리게이트 참조 정보를 가져옴
+
+    
     let cellIdentifier: String = "CramList"
     let cpa: [String] = ["회계학", "경제학"]
     let toeic: [String] = ["700달성", "고난도어휘"]
@@ -34,6 +37,11 @@ class CramListViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
 
         fetchGetSetNames()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {//뷰가 화면에 출력되면 호출
+        
+        //self.cramListTableView.reloadData()//테이블 데이터 리로드
     }
     
     // API callers
@@ -72,6 +80,8 @@ class CramListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        /*return self.appDelegate.CramQuestionList.count*/
         switch section {
         case 0:
             return cpa.count
@@ -83,7 +93,7 @@ class CramListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         
         if indexPath.section < 2 {

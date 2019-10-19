@@ -12,6 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    //appdelegate에 데이터를 저장하는 이유 : 뷰 컨트롤러는 생명주기가 짧기 때문에 화면을 전환할 때 이전 화면의 뷰 컨트롤러는 메모리에서 소멸한다. 그렇기 때문에 뷰 컨트롤러의 커스텀 클래스에는 데이터를 저장하는 것은 적합하지 않다. 앱델리게이트 클래스는 전역변수를 저장하기에 적합하다. 이 클래스는 앱 내에서 하나만 존재하고 어디서든 쉽게 접근할 수 있기 때문이다. 앱 자체의 생명주기와 운명을 함께하기 때문에 중간에 소멸되지 않는다. 묭 읽으면 요약으로 줄이셈
+    var CramQuestionList = [CramQuestionData]() //문제 데이터를 저장할 배열
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
