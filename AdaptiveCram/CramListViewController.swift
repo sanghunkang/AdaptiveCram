@@ -21,7 +21,6 @@ class CramListViewController: UIViewController, UITableViewDelegate, UITableView
     let cpa: [String] = ["회계학", "경제학"]
     let toeic: [String] = ["700달성", "고난도어휘"]
     var setNames: [SetName] = []
-    var dates: [Date] = []
     
     // IBOutlets
     @IBOutlet weak var cramListTableView: UITableView!
@@ -29,10 +28,6 @@ class CramListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var goCramButton: UIButton!
     
     // IBActions
-    @IBAction func touchUpAddButton(_ sender: UIButton){
-        dates.append(Date())
-        self.cramListTableView.reloadData()
-    }
     
     // View cycle
     override func viewDidLoad() {
@@ -82,8 +77,6 @@ class CramListViewController: UIViewController, UITableViewDelegate, UITableView
             return cpa.count
         case 1:
             return toeic.count
-        case 2:
-            return dates.count
         default:
             return 0
         }
