@@ -260,6 +260,22 @@
             </objects>
             <point key="canvasLocation" x="3231.884057971015" y="747.99107142857144"/>
         </scene>
+        <!--Manage-->
+        <scene sceneID="N3u-3V-2Mj">
+            <objects>
+                <viewController id="TPI-Pt-GrG" customClass="ManagementViewController" customModule="AdaptiveCram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G5B-88-Chl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tpy-ym-eZe"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Manage" image="cube.box.fill" catalog="system" id="uMu-xt-1Mj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4cE-Rt-qHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4529" y="757"/>
+        </scene>
         <!--My-->
         <scene sceneID="bCW-5T-l7S">
             <objects>
@@ -368,6 +384,7 @@
                     <connections>
                         <segue destination="Bgm-Qe-V9G" kind="relationship" relationship="viewControllers" id="hgL-BX-dHj"/>
                         <segue destination="eqN-P7-cuM" kind="relationship" relationship="viewControllers" id="2hY-Vg-Ikt"/>
+                        <segue destination="TPI-Pt-GrG" kind="relationship" relationship="viewControllers" id="aDG-Jk-PeV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeS-xR-6JK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -376,6 +393,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cube.box.fill" catalog="system" width="64" height="62"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>

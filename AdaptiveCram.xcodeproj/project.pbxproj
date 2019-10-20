@@ -12,6 +12,7 @@
 		220DC6722354421B00F6B60A /* CompleteCramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DC6712354421B00F6B60A /* CompleteCramViewController.swift */; };
 		224346A2235AE66D0087AA6A /* CramCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346A1235AE66D0087AA6A /* CramCategoryViewController.swift */; };
 		224346A7235AFB8A0087AA6A /* CramQuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224346A5235AF9B10087AA6A /* CramQuestionData.swift */; };
+		225E39A8235CA0660079470B /* ManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225E39A7235CA0660079470B /* ManagementViewController.swift */; };
 		D73159352312C57C00798BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73159342312C57C00798BE8 /* AppDelegate.swift */; };
 		D731593A2312C57C00798BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73159382312C57C00798BE8 /* Main.storyboard */; };
 		D731593C2312C57D00798BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D731593B2312C57D00798BE8 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		220DC6712354421B00F6B60A /* CompleteCramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteCramViewController.swift; sourceTree = "<group>"; };
 		224346A1235AE66D0087AA6A /* CramCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CramCategoryViewController.swift; sourceTree = "<group>"; };
 		224346A5235AF9B10087AA6A /* CramQuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CramQuestionData.swift; sourceTree = "<group>"; };
+		225E39A7235CA0660079470B /* ManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementViewController.swift; sourceTree = "<group>"; };
 		D73159312312C57C00798BE8 /* AdaptiveCram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdaptiveCram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73159342312C57C00798BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73159392312C57C00798BE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				224346A1235AE66D0087AA6A /* CramCategoryViewController.swift */,
 				220DC6712354421B00F6B60A /* CompleteCramViewController.swift */,
 				D73159382312C57C00798BE8 /* Main.storyboard */,
+				225E39A7235CA0660079470B /* ManagementViewController.swift */,
 				D731593B2312C57D00798BE8 /* Assets.xcassets */,
 				D731593D2312C57D00798BE8 /* LaunchScreen.storyboard */,
 				D73159402312C57D00798BE8 /* Info.plist */,
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225E39A8235CA0660079470B /* ManagementViewController.swift in Sources */,
 				220DC66E235336D500F6B60A /* CramListViewController.swift in Sources */,
 				220DC67023534E1C00F6B60A /* CramViewController.swift in Sources */,
 				220DC6722354421B00F6B60A /* CompleteCramViewController.swift in Sources */,
