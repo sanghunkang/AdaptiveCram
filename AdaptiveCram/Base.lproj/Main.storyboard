@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cram View Controller-->
+        <!--Cram !-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CramViewController" customModule="AdaptiveCram" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTP-9R-TMA">
                                 <rect key="frame" x="34" y="450" width="100" height="30"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23686508618004948" green="0.78039215689999997" blue="0.51514913281523189" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="UpD-Nz-ToV"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="hvk-80-ocD"/>
@@ -68,7 +68,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f2-qV-UTk">
                                 <rect key="frame" x="283" y="450" width="100" height="30"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.36885066221518947" blue="0.35652603045494791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ni4-YF-fB6"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="aHt-Dw-OL7"/>
@@ -115,7 +115,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.58048968191768302" green="0.73209482275543081" blue="0.8363198338394956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HYu-5k-CZE" firstAttribute="leading" secondItem="AHa-Up-ISg" secondAttribute="trailing" constant="59" id="3Ff-Tc-iXe"/>
                             <constraint firstItem="AsV-Hp-r5P" firstAttribute="centerY" secondItem="gyn-sH-iYo" secondAttribute="centerY" id="4AU-WW-vW5"/>
@@ -146,7 +146,7 @@
                             <constraint firstItem="cqo-44-OSH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oUg-xS-Y0P"/>
                             <constraint firstItem="cqo-44-OSH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qgs-3n-UFs"/>
                             <constraint firstAttribute="bottom" secondItem="HYu-5k-CZE" secondAttribute="bottom" constant="738" id="qza-ll-9UL"/>
-                            <constraint firstItem="AHa-Up-ISg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AsV-Hp-r5P" secondAttribute="trailing" symbolic="YES" id="sjH-LK-cnz"/>
+                            <constraint firstItem="AHa-Up-ISg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AsV-Hp-r5P" secondAttribute="trailing" constant="8" symbolic="YES" id="sjH-LK-cnz"/>
                             <constraint firstItem="dmW-Ix-YR0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="snw-Vu-wOM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8f2-qV-UTk" secondAttribute="trailing" constant="31" id="veP-kC-pQV"/>
                             <constraint firstItem="iTP-9R-TMA" firstAttribute="top" secondItem="PZp-OE-fAq" secondAttribute="bottom" constant="17" id="wwt-xg-6Sj"/>
@@ -154,7 +154,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lnV-3A-C5S"/>
+                    <navigationItem key="navigationItem" title="Cram !" id="lnV-3A-C5S"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                     </userDefinedRuntimeAttributes>
@@ -174,7 +174,141 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1886" y="1485"/>
+            <point key="canvasLocation" x="1338" y="1568"/>
+        </scene>
+        <!--Add Cram !-->
+        <scene sceneID="zDg-2Q-Uua">
+            <objects>
+                <viewController title="Add Cram !" id="Ghb-fm-VgU" customClass="AddCramViewController" customModule="AdaptiveCram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ieF-dS-Bn1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="문제를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eU2-Ix-NRg">
+                                <rect key="frame" x="31.5" y="227" width="351" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZg-Dw-6wN">
+                                <rect key="frame" x="184.5" y="726" width="45" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Oua-8s-Bol"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmQ-i2-Frq">
+                                <rect key="frame" x="31.5" y="178" width="102.5" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="B0m-rm-dUb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uar-Wl-XJJ">
+                                <rect key="frame" x="36" y="463" width="93.5" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="해설을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VuM-xF-r08">
+                                <rect key="frame" x="31.5" y="510" width="351" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSO-K1-E5q">
+                                <rect key="frame" x="31.5" y="333" width="100.5" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rCL-oG-Ocm">
+                                <rect key="frame" x="29" y="385" width="103" height="32"/>
+                                <segments>
+                                    <segment title="True"/>
+                                    <segment title="False"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eER-j9-piT">
+                                <rect key="frame" x="61" y="138" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDI-FC-M7v">
+                                <rect key="frame" x="180" y="113" width="9" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSy-Gy-Dqw">
+                                <rect key="frame" x="212" y="113" width="23.5" height="21.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23.5" id="3YU-Is-iOn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-1o-sJz">
+                                <rect key="frame" x="197" y="113" width="7" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66639317360975747" green="0.87253839841435199" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WmQ-i2-Frq" firstAttribute="centerX" secondItem="Uar-Wl-XJJ" secondAttribute="centerX" id="1EU-bM-cZx"/>
+                            <constraint firstItem="OKB-1o-sJz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PDI-FC-M7v" secondAttribute="trailing" symbolic="YES" id="1sn-ze-sls"/>
+                            <constraint firstItem="VuM-xF-r08" firstAttribute="top" secondItem="Uar-Wl-XJJ" secondAttribute="bottom" constant="18" id="8bO-bL-GLI"/>
+                            <constraint firstItem="rCL-oG-Ocm" firstAttribute="leading" secondItem="HLO-sx-3Yx" secondAttribute="leading" constant="29" id="9Bq-7v-bc3"/>
+                            <constraint firstItem="WmQ-i2-Frq" firstAttribute="top" secondItem="HLO-sx-3Yx" secondAttribute="top" constant="90" id="Gut-Xc-DNj"/>
+                            <constraint firstItem="eSy-Gy-Dqw" firstAttribute="top" secondItem="HLO-sx-3Yx" secondAttribute="top" constant="25" id="H3k-9K-1T8"/>
+                            <constraint firstItem="eSy-Gy-Dqw" firstAttribute="firstBaseline" secondItem="OKB-1o-sJz" secondAttribute="baseline" id="K8s-TC-UYp"/>
+                            <constraint firstItem="HLO-sx-3Yx" firstAttribute="trailing" secondItem="eSy-Gy-Dqw" secondAttribute="trailing" constant="178.5" id="Poc-hW-f7H"/>
+                            <constraint firstItem="VuM-xF-r08" firstAttribute="leading" secondItem="mSO-K1-E5q" secondAttribute="leading" id="Vb3-HH-Ru1"/>
+                            <constraint firstItem="HLO-sx-3Yx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WmQ-i2-Frq" secondAttribute="trailing" id="WhC-Tu-wjH"/>
+                            <constraint firstItem="OKB-1o-sJz" firstAttribute="height" secondItem="PDI-FC-M7v" secondAttribute="height" id="WhF-EW-FDc"/>
+                            <constraint firstItem="eSy-Gy-Dqw" firstAttribute="height" secondItem="PDI-FC-M7v" secondAttribute="height" id="XtU-xv-cR2"/>
+                            <constraint firstItem="PDI-FC-M7v" firstAttribute="baseline" secondItem="eSy-Gy-Dqw" secondAttribute="baseline" id="Yah-xX-aUx"/>
+                            <constraint firstItem="HLO-sx-3Yx" firstAttribute="bottom" secondItem="sZg-Dw-6wN" secondAttribute="bottom" constant="94" id="Yjy-Cr-cGe"/>
+                            <constraint firstItem="VuM-xF-r08" firstAttribute="trailing" secondItem="eU2-Ix-NRg" secondAttribute="trailing" id="Z4O-sF-UaD"/>
+                            <constraint firstItem="VuM-xF-r08" firstAttribute="centerX" secondItem="sZg-Dw-6wN" secondAttribute="centerX" id="Zi7-HN-XUY"/>
+                            <constraint firstItem="rCL-oG-Ocm" firstAttribute="top" secondItem="mSO-K1-E5q" secondAttribute="bottom" constant="23" id="bKu-t9-a5I"/>
+                            <constraint firstItem="Uar-Wl-XJJ" firstAttribute="top" secondItem="rCL-oG-Ocm" secondAttribute="bottom" constant="47" id="dQ0-Rc-hZC"/>
+                            <constraint firstItem="HLO-sx-3Yx" firstAttribute="trailing" secondItem="mSO-K1-E5q" secondAttribute="trailing" constant="282" id="hWk-g0-bLi"/>
+                            <constraint firstItem="sZg-Dw-6wN" firstAttribute="centerX" secondItem="ieF-dS-Bn1" secondAttribute="centerX" id="lVp-ya-GDY"/>
+                            <constraint firstItem="WmQ-i2-Frq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eU2-Ix-NRg" secondAttribute="leading" id="lcC-Tz-xKG"/>
+                            <constraint firstAttribute="bottom" secondItem="Uar-Wl-XJJ" secondAttribute="bottom" constant="404" id="ld4-7P-eKP"/>
+                            <constraint firstItem="eSy-Gy-Dqw" firstAttribute="leading" secondItem="OKB-1o-sJz" secondAttribute="trailing" constant="8" id="m6B-vQ-ybo"/>
+                            <constraint firstItem="mSO-K1-E5q" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rCL-oG-Ocm" secondAttribute="trailing" id="npQ-Gf-Fyp"/>
+                            <constraint firstItem="eU2-Ix-NRg" firstAttribute="top" secondItem="WmQ-i2-Frq" secondAttribute="bottom" constant="20" id="pDd-eA-vdf"/>
+                            <constraint firstItem="OKB-1o-sJz" firstAttribute="centerY" secondItem="PDI-FC-M7v" secondAttribute="centerY" id="pZE-M5-dGb"/>
+                            <constraint firstItem="WmQ-i2-Frq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HLO-sx-3Yx" secondAttribute="leading" id="s19-7q-kIK"/>
+                            <constraint firstItem="Uar-Wl-XJJ" firstAttribute="leading" secondItem="HLO-sx-3Yx" secondAttribute="leading" constant="36" id="sD3-Xe-E5E"/>
+                            <constraint firstItem="eSy-Gy-Dqw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OKB-1o-sJz" secondAttribute="trailing" constant="8" symbolic="YES" id="suZ-Ya-Uwy"/>
+                            <constraint firstItem="WmQ-i2-Frq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mSO-K1-E5q" secondAttribute="leading" id="w4U-hh-VhZ"/>
+                            <constraint firstItem="PDI-FC-M7v" firstAttribute="leading" secondItem="HLO-sx-3Yx" secondAttribute="leading" constant="180" id="xQn-Sf-cAA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HLO-sx-3Yx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Cram !" id="BOK-cH-lWh"/>
+                    <connections>
+                        <outlet property="CurrentQuestionLabel" destination="PDI-FC-M7v" id="Xrx-I3-Mln"/>
+                        <outlet property="TotalQuestionLabel" destination="eSy-Gy-Dqw" id="1RW-nc-H8g"/>
+                        <outlet property="addQuestionButton" destination="sZg-Dw-6wN" id="0S3-Ld-UcH"/>
+                        <outlet property="answerSegmentControl" destination="rCL-oG-Ocm" id="iMa-Vy-dWx"/>
+                        <outlet property="questionITextField" destination="eU2-Ix-NRg" id="11n-FD-opu"/>
+                        <outlet property="solutionTextField" destination="VuM-xF-r08" id="PSs-a8-548"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVi-li-pEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2330.434782608696" y="1567.6339285714284"/>
         </scene>
         <!--Complete Cram View Controller-->
         <scene sceneID="pVX-z8-fOT">
@@ -191,10 +325,10 @@
             </objects>
             <point key="canvasLocation" x="1338" y="2287"/>
         </scene>
-        <!--Category-->
+        <!--Other Cram-->
         <scene sceneID="Ubi-5r-1f5">
             <objects>
-                <viewController id="eqN-P7-cuM" customClass="CramCategoryViewController" customModule="AdaptiveCram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Other Cram" id="eqN-P7-cuM" customClass="CramCategoryViewController" customModule="AdaptiveCram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IyI-Yn-nRI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +372,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.62137085040539997" green="0.86259359121322632" blue="0.81908039570607738" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tkE-L2-eBS" firstAttribute="top" secondItem="EyS-9A-9aD" secondAttribute="bottom" constant="51" id="1yW-94-ppa"/>
                             <constraint firstItem="gFj-xp-KPp" firstAttribute="bottom" secondItem="tkE-L2-eBS" secondAttribute="bottom" constant="169" id="33i-yP-wwT"/>
@@ -276,7 +410,7 @@
             </objects>
             <point key="canvasLocation" x="4529" y="757"/>
         </scene>
-        <!--My-->
+        <!--My Cram-->
         <scene sceneID="bCW-5T-l7S">
             <objects>
                 <viewController id="Bgm-Qe-V9G" customClass="CramListViewController" customModule="AdaptiveCram" customModuleProvider="target" sceneMemberID="viewController">
@@ -306,7 +440,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="push" id="iYm-R1-PQT"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="iYm-R1-PQT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -318,9 +452,12 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZm-ON-Jem">
                                 <rect key="frame" x="336" y="150" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="추가"/>
+                                <state key="normal" title="추가">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="touchUpAddButton:" destination="Bgm-Qe-V9G" eventType="touchUpInside" id="Qqg-2e-cMA"/>
+                                    <segue destination="Ghb-fm-VgU" kind="show" id="vs5-aS-l4g"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Cram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYH-jF-VGR">
@@ -331,11 +468,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.58580149268456505" green="0.73879390679262524" blue="0.84397263601036265" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hav-EU-5EW"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My" image="star.fill" catalog="system" id="iKR-a2-iD1"/>
-                    <navigationItem key="navigationItem" id="LdM-Av-WFv"/>
+                    <navigationItem key="navigationItem" title="My Cram" id="LdM-Av-WFv"/>
                     <connections>
                         <outlet property="addListButton" destination="qZm-ON-Jem" id="Hkx-sZ-XIh"/>
                         <outlet property="cramListTableView" destination="ldj-va-81M" id="7fl-Xz-2pg"/>
