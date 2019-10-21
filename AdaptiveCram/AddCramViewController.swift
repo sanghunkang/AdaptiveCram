@@ -9,8 +9,9 @@ import UIKit
 
 class AddCramViewController: UIViewController {
 
-    @IBOutlet weak var CurrentQuestionLabel: UILabel!
-    @IBOutlet weak var TotalQuestionLabel: UILabel!
+    // IBOutlets
+    @IBOutlet weak var currentQuestionLabel: UILabel!
+    @IBOutlet weak var totalQuestionLabel: UILabel!
     @IBOutlet weak var questionITextField: UITextField!
     @IBOutlet weak var answerSegmentControl: UISegmentedControl!
     @IBOutlet weak var solutionTextField: UITextField!

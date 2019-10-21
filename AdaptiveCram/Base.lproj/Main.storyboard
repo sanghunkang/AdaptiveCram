@@ -232,12 +232,6 @@
                                     <segment title="False"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eER-j9-piT">
-                                <rect key="frame" x="61" y="138" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDI-FC-M7v">
                                 <rect key="frame" x="180" y="113" width="9" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -263,7 +257,7 @@
                         <color key="backgroundColor" red="0.66639317360975747" green="0.87253839841435199" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WmQ-i2-Frq" firstAttribute="centerX" secondItem="Uar-Wl-XJJ" secondAttribute="centerX" id="1EU-bM-cZx"/>
-                            <constraint firstItem="OKB-1o-sJz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PDI-FC-M7v" secondAttribute="trailing" symbolic="YES" id="1sn-ze-sls"/>
+                            <constraint firstItem="OKB-1o-sJz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PDI-FC-M7v" secondAttribute="trailing" constant="8" symbolic="YES" id="1sn-ze-sls"/>
                             <constraint firstItem="VuM-xF-r08" firstAttribute="top" secondItem="Uar-Wl-XJJ" secondAttribute="bottom" constant="18" id="8bO-bL-GLI"/>
                             <constraint firstItem="rCL-oG-Ocm" firstAttribute="leading" secondItem="HLO-sx-3Yx" secondAttribute="leading" constant="29" id="9Bq-7v-bc3"/>
                             <constraint firstItem="WmQ-i2-Frq" firstAttribute="top" secondItem="HLO-sx-3Yx" secondAttribute="top" constant="90" id="Gut-Xc-DNj"/>
@@ -298,17 +292,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Cram !" id="BOK-cH-lWh"/>
                     <connections>
-                        <outlet property="CurrentQuestionLabel" destination="PDI-FC-M7v" id="Xrx-I3-Mln"/>
-                        <outlet property="TotalQuestionLabel" destination="eSy-Gy-Dqw" id="1RW-nc-H8g"/>
-                        <outlet property="addQuestionButton" destination="sZg-Dw-6wN" id="0S3-Ld-UcH"/>
-                        <outlet property="answerSegmentControl" destination="rCL-oG-Ocm" id="iMa-Vy-dWx"/>
-                        <outlet property="questionITextField" destination="eU2-Ix-NRg" id="11n-FD-opu"/>
-                        <outlet property="solutionTextField" destination="VuM-xF-r08" id="PSs-a8-548"/>
+                        <outlet property="addQuestionButton" destination="sZg-Dw-6wN" id="v3O-lU-Aw9"/>
+                        <outlet property="answerSegmentControl" destination="rCL-oG-Ocm" id="ffV-zu-qfr"/>
+                        <outlet property="currentQuestionLabel" destination="PDI-FC-M7v" id="0Yu-h6-7HS"/>
+                        <outlet property="questionITextField" destination="eU2-Ix-NRg" id="kVj-uN-7de"/>
+                        <outlet property="solutionTextField" destination="VuM-xF-r08" id="HSN-uP-ulK"/>
+                        <outlet property="totalQuestionLabel" destination="eSy-Gy-Dqw" id="pTq-cT-tq9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MVi-li-pEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2330.434782608696" y="1567.6339285714284"/>
+            <point key="canvasLocation" x="2267" y="1568"/>
         </scene>
         <!--Complete Cram View Controller-->
         <scene sceneID="pVX-z8-fOT">
@@ -410,7 +404,7 @@
             </objects>
             <point key="canvasLocation" x="4529" y="757"/>
         </scene>
-        <!--My Cram-->
+        <!--My-->
         <scene sceneID="bCW-5T-l7S">
             <objects>
                 <viewController id="Bgm-Qe-V9G" customClass="CramListViewController" customModule="AdaptiveCram" customModuleProvider="target" sceneMemberID="viewController">
@@ -457,7 +451,7 @@
                                 </state>
                                 <connections>
                                     <action selector="touchUpAddButton:" destination="Bgm-Qe-V9G" eventType="touchUpInside" id="Qqg-2e-cMA"/>
-                                    <segue destination="Ghb-fm-VgU" kind="show" id="vs5-aS-l4g"/>
+                                    <segue destination="Ghb-fm-VgU" kind="show" id="5VF-re-5LU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Cram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYH-jF-VGR">
@@ -472,7 +466,7 @@
                         <viewLayoutGuide key="safeArea" id="hav-EU-5EW"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My" image="star.fill" catalog="system" id="iKR-a2-iD1"/>
-                    <navigationItem key="navigationItem" title="My Cram" id="LdM-Av-WFv"/>
+                    <navigationItem key="navigationItem" id="LdM-Av-WFv"/>
                     <connections>
                         <outlet property="addListButton" destination="qZm-ON-Jem" id="Hkx-sZ-XIh"/>
                         <outlet property="cramListTableView" destination="ldj-va-81M" id="7fl-Xz-2pg"/>
@@ -480,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30e-W5-RVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="748"/>
+            <point key="canvasLocation" x="1885.5072463768117" y="747.99107142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BnB-3g-ka8">
