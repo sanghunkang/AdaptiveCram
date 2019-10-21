@@ -174,7 +174,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1338" y="1550"/>
+            <point key="canvasLocation" x="1886" y="1485"/>
         </scene>
         <!--Complete Cram View Controller-->
         <scene sceneID="pVX-z8-fOT">
@@ -288,14 +288,6 @@
                                 <rect key="frame" x="20" y="202" width="374" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l2G-eJ-sqz">
-                                    <rect key="frame" x="0.0" y="147.5" width="374" height="58"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="암기하기"/>
-                                    <connections>
-                                        <segue destination="BYZ-38-t0r" kind="show" id="JFm-4X-UVi"/>
-                                    </connections>
-                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CramList" textLabel="jgs-UR-k07" rowHeight="74" style="IBUITableViewCellStyleDefault" id="i6T-Sc-bl1">
                                         <rect key="frame" x="0.0" y="55.5" width="374" height="74"/>
@@ -313,6 +305,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="push" id="iYm-R1-PQT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -344,7 +339,6 @@
                     <connections>
                         <outlet property="addListButton" destination="qZm-ON-Jem" id="Hkx-sZ-XIh"/>
                         <outlet property="cramListTableView" destination="ldj-va-81M" id="7fl-Xz-2pg"/>
-                        <outlet property="goCramButton" destination="l2G-eJ-sqz" id="uFf-Yk-vq7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30e-W5-RVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -27,7 +27,6 @@ class CramListViewController: UIViewController, UITableViewDelegate, UITableView
     // IBOutlets
     @IBOutlet weak var cramListTableView: UITableView!
     @IBOutlet var addListButton: UIButton!
-    @IBOutlet var goCramButton: UIButton!
     
     // IBActions
     
