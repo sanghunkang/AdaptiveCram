@@ -10,7 +10,7 @@ import Foundation
 class CramQuestionData {
     var category: String? //대종류
     var title: String? //이름
-    var question: String? //대종류
+    var question: String? //대종류 - 사진 추후 추가 예정.
     var answer: String? //답변 - 오지선다, 참거짓, 주관식.. 추후 추가 예정
         
 }
